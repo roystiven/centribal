@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "referencia": "M0001",
+      "nombre": "PRODUCTO DE PRUEBA 1",
+      "descripcion": "DESCRIPCION DE PRODUCTO DE PRUBA",
+      "precio": 20000,
+      "impuesto": 19
+    },
+    {
+      "id": 2,
+      "referencia": "M0002",
+      "nombre": "PRODUCTO DE PRUEBA2",
+      "descripcion": "DESCRIPCION DE PRODUCTO DE PRUBA2",
+      "precio": 40000,
+      "impuesto": 19
+    },
+    {
+      "referencia": "asda",
+      "nombre": "asdasd",
+      "descripcion": "asdasd",
+      "precio": "213123",
+      "impuesto": "123123",
+      "id": 3
+    },
+    {
+      "referencia": "asda",
+      "nombre": "asdasd",
+      "descripcion": "asdasd",
+      "precio": "213123",
+      "impuesto": "123123",
+      "id": 4
+    }
+  ],
+  "pedidos":[
+    
+  ]
+}
