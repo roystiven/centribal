@@ -4,13 +4,21 @@ Documentación de aplicación.
 
 Para poder ver el funcionamiento del desarrollo realizado, se debe seguir los siguientes pasos.
 
-**1.  ACTIVAR SERVIDOR JSON**
+**1.  INSTALAR DEPENDENCIAS**
+
+Para instalar las dependencias debe ejecutar el comando: **npm i**
+
+**2.  ACTIVAR SERVIDOR JSON**
 
 Para esto en la consola se debe correr el siguiente comando: **json-server --watch db.json**
 
-**2. ACTIVAR EL ENTORNO DE DESARROLLO DEL PROYECTO.**
+**3. ACTIVAR EL ENTORNO DE DESARROLLO DEL PROYECTO.**
 
 Para esto se debe ejecutar el siguiente comando: **npm run dev.**
+
+**4. EJECUTAR PRUEBA.**
+
+Para realizar el test se debe ejecutar el siguiente comando: **npm run test.**
 
 El desarrollo de la aplicación fue realizado en dos componentes principalmente, los cuales se encuentran alojados en la carpeta SRC.
 
