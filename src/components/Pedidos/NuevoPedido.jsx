@@ -32,7 +32,7 @@ const NuevoPedido = ({ showModal, setShowModal, accion, pedidoSeleccionado, setP
   const HandleEnviar = async () => {
 
 
-    let url = import.meta.env.VITE_API_URL_ORDERS;
+    let url = "http://localhost:3000/pedidos";
     if (accion === "editar") {
       let data = {
         id:pedidoSeleccionado.id,
@@ -94,7 +94,7 @@ const NuevoPedido = ({ showModal, setShowModal, accion, pedidoSeleccionado, setP
     let valor_con_imp = 0
     let valor_sin_imp = 0
     temp.map(art=>{
-      let valor_con_imp2 =  parseFloat(art.cantidad) * art.precio * (1+art.impuesto)
+      let valor_con_imp2 =  parseFloat(art.cantidad) * art.precio * (1+(art.impuesto/100))
       let valor_sin_imp2 = parseFloat(art.cantidad) * art.precio
       valor_con_imp += valor_con_imp2
       valor_sin_imp += valor_sin_imp2
@@ -118,7 +118,7 @@ const NuevoPedido = ({ showModal, setShowModal, accion, pedidoSeleccionado, setP
     let valor_con_imp = 0
     let valor_sin_imp = 0
     articulos_temp.forEach(dat=>{
-      let valor_con_imp2 =  parseFloat(dat.cantidad) * dat.precio * (1+dat.impuesto)
+      let valor_con_imp2 =  parseFloat(dat.cantidad) * dat.precio * (1+(dat.impuesto/100))
       let valor_sin_imp2 = parseFloat(dat.cantidad) * dat.precio
 
       valor_con_imp += valor_con_imp2

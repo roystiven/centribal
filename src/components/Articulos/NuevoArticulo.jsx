@@ -31,7 +31,7 @@ const NuevoArticulo = ({
   }, [accion, showModal]);
 
   const HandleEnviar = async () => {
-    let url = import.meta.env.VITE_API_URL_PRODUCTS;
+    let url = "http://localhost:3000/products";
     if (accion === "editar") {
       const resp = await fetch(url + "/" + articuloSeleccionado.id, {
         method: "PUT",

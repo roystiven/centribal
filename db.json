@@ -17,7 +17,7 @@
       "impuesto": 19
     },
     {
-      "referencia": "M005",
+      "referencia": "M0005",
       "nombre": "CAMA",
       "descripcion": "asdasd",
       "precio": "30000",
@@ -72,6 +72,7 @@
       ]
     },
     {
+      "id": 2,
       "articulos": [
         {
           "cantidad": 2,
@@ -80,9 +81,37 @@
           "impuesto": 19,
           "precio": 20000,
           "referencia": "M0001"
+        },
+        {
+          "cantidad": 1,
+          "id": 2,
+          "id_articulo": "3",
+          "impuesto": 20,
+          "precio": 30000,
+          "referencia": "M0005"
+        }
+      ]
+    },
+    {
+      "articulos": [
+        {
+          "cantidad": 1,
+          "id": 1,
+          "id_articulo": "4",
+          "impuesto": 20,
+          "precio": 50000,
+          "referencia": "M0004"
+        },
+        {
+          "cantidad": 2,
+          "id": 2,
+          "id_articulo": "5",
+          "impuesto": 20,
+          "precio": 60000,
+          "referencia": "M0003"
         }
       ],
-      "id": 2
+      "id": 3
     }
   ]
 }

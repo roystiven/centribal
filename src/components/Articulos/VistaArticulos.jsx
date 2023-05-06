@@ -18,7 +18,7 @@ const VistaArticulos = () => {
   }, [showModal]);
 
   const ArticulosIniciales = async () => {
-    let url = import.meta.env.VITE_API_URL_PRODUCTS;
+    let url = "http://localhost:3000/products";
     const resp = await fetch(url);
     const rest = await resp.json();
     setArticulos(rest);

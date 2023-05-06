@@ -19,12 +19,12 @@ const VistaPedidos = () => {
   }, [showModal]);
 
   const PedidosIniciales = async () => {
-    let url = import.meta.env.VITE_API_URL_ORDERS;
+    let url = "http://localhost:3000/pedidos";
     const resp = await fetch(url);
     const rest = await resp.json();
     setPedidos(rest);
 
-    url = import.meta.env.VITE_API_URL_PRODUCTS;
+    url = "http://localhost:3000/products";
     const resp2 = await fetch(url);
     const rest2 = await resp2.json();
     setProductos(rest2);
