@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./styles.css";
 
-const NuevoArticulo = ({ showModal, setShowModal, accion, articuloSeleccionado, setArticuloSeleccionado }) => {
-
+const NuevoArticulo = ({
+  showModal,
+  setShowModal,
+  accion,
+  articuloSeleccionado,
+  setArticuloSeleccionado,
+}) => {
   const [articulo, setArticulo] = useState({
     referencia: "",
     nombre: "",
@@ -13,41 +18,39 @@ const NuevoArticulo = ({ showModal, setShowModal, accion, articuloSeleccionado, 
 
   useEffect(() => {
     if (accion === "editar") {
-        setArticulo(articuloSeleccionado)
-    }else{
-        setArticulo({
-            referencia: "",
-            nombre: "",
-            descripcion: "",
-            precio: "",
-            impuesto: "",
-          });
+      setArticulo(articuloSeleccionado);
+    } else {
+      setArticulo({
+        referencia: "",
+        nombre: "",
+        descripcion: "",
+        precio: "",
+        impuesto: "",
+      });
     }
-
   }, [accion, showModal]);
 
   const HandleEnviar = async () => {
     let url = import.meta.env.VITE_API_URL_PRODUCTS;
     if (accion === "editar") {
-        const resp = await fetch(url+"/"+articuloSeleccionado.id, {
-            method: "PUT",
-            body: JSON.stringify(articulo),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-          const rest = await resp.json();
-          if (rest.id) {
-            setArticulo({
-              referencia: "",
-              nombre: "",
-              descripcion: "",
-              precio: "",
-              impuesto: "",
-            });
-            setShowModal(false);
-          }
-
+      const resp = await fetch(url + "/" + articuloSeleccionado.id, {
+        method: "PUT",
+        body: JSON.stringify(articulo),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const rest = await resp.json();
+      if (rest.id) {
+        setArticulo({
+          referencia: "",
+          nombre: "",
+          descripcion: "",
+          precio: "",
+          impuesto: "",
+        });
+        setShowModal(false);
+      }
     } else {
       const resp = await fetch(url, {
         method: "POST",
@@ -74,7 +77,11 @@ const NuevoArticulo = ({ showModal, setShowModal, accion, articuloSeleccionado, 
     return (
       <div className="o_modal">
         <div className="o_modal_body">
-          <h2>{accion !== "editar" ? "Creación de nuevo producto" : "Edición de producto"}</h2>
+          <h2>
+            {accion !== "editar"
+              ? "Creación de nuevo producto"
+              : "Edición de producto"}
+          </h2>
           <div className="form-group w-100">
             <label>Referencia</label>
             <input
@@ -141,23 +148,22 @@ const NuevoArticulo = ({ showModal, setShowModal, accion, articuloSeleccionado, 
             />
           </div>
 
-          
-          <button
-            type="button"
-            className="btn btn-success w-100"
-            onClick={() => HandleEnviar()}
-          >
-            {accion !== "editar" ? "Guardar" : "Modificar"}
-          </button>
-
-          
-          <button
-            type="button"
-            className="btn btn-danger w-100"
-            onClick={() => setShowModal(false)}
-          >
-            Cerrar
-          </button>
+          <div className="container_button">
+            <button
+              type="button"
+              className="btn btn-danger w-100"
+              onClick={() => setShowModal(false)}
+            >
+              Cerrar
+            </button>
+            <button
+              type="button"
+              className="btn btn-success w-100"
+              onClick={() => HandleEnviar()}
+            >
+              {accion !== "editar" ? "Guardar" : "Modificar"}
+            </button>
+          </div>
         </div>
       </div>
     );

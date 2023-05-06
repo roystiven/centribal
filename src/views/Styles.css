@@ -1,0 +1,47 @@
+.header_custom{
+    background-color: #fcf7ff !important;
+    height: 7rem;
+}
+
+.header_custom img{
+    height: 3rem;
+    margin-left: 2rem;
+}
+
+
+
+
+.container_home{
+    WIDTH: 100%;
+    HEIGHT: 81VH;
+    DISPLAY: FLEX;
+    JUSTIFY-CONTENT: CENTER;
+    ALIGN-ITEMS: CENTER;
+    FLEX-DIRECTION: column;
+    GAP: 2REM;
+}
+
+
+.container_home .link{
+        height: 8rem;
+        width: 20rem;
+        font-size: 28px;
+        border: 0;
+        border-radius: 39px;
+        font-weight: 700;
+        color: #fff;
+}
+
+.container_home .link_articulos{
+    background-color: #ff5c35
+}
+
+.container_home .link_pedidos{
+    background-color: #3f3a60;
+}
+
+
+.container_home a{
+    text-decoration: none;
+    color: #fff;
+}

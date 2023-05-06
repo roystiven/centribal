@@ -21,7 +21,6 @@ const VistaArticulos = () => {
     let url = import.meta.env.VITE_API_URL_PRODUCTS;
     const resp = await fetch(url);
     const rest = await resp.json();
-    console.log(rest);
     setArticulos(rest);
   };
 
@@ -37,8 +36,16 @@ const VistaArticulos = () => {
     setShowModal(true);
   };
 
+
+  const formatter = new Intl.NumberFormat('es-CO', {
+    style: 'currency',
+    currency: 'COP',
+    minimumFractionDigits: 0
+  })
+
   return (
-    <div className="p-4">
+    <div className="p-4 max-ancho">
+      <a href="/" className="atras">{"<"}Atras</a>
       <h1 className="">VISTA DE ARTICULOS</h1>
       <div className="mt-5">
         <button
@@ -53,15 +60,15 @@ const VistaArticulos = () => {
             <tr>
               <th scope="col">Referencia</th>
               <th scope="col">Nombre</th>
-              <th scope="col">precio</th>
+              <th scope="col">Precio</th>
             </tr>
           </thead>
           <tbody>
             {articulos?.map((dat) => (
               <tr key={dat.id}>
-                <td onClick={() => HandleEditar(dat)}>{dat.referencia}</td>
+                <td onClick={() => HandleEditar(dat)} className="ver_item">{dat.referencia}</td>
                 <td>{dat.nombre}</td>
-                <td>{dat.precio}</td>
+                <td>{formatter.format(dat.precio)}</td>
               </tr>
             ))}
           </tbody>
